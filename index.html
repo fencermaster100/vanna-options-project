@@ -5,54 +5,113 @@
 :root{--teal:#26A69A;--ink:#0b2545;--mut:#6b7280;--line:#e5e7eb}
 *{box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a1a1a;margin:0;background:#fafbfc}
-.wrap{max-width:860px;margin:0 auto;padding:52px 24px 80px}
+.wrap{max-width:1040px;margin:0 auto;padding:52px 24px 80px}
 h1{color:var(--ink);font-size:27px;margin:0 0 4px}
 .sub{color:var(--mut);font-size:14px;margin:0 0 30px}
-.grid{display:grid;grid-template-columns:1fr;gap:16px}
-a.card{display:block;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:22px 24px;background:#fff;transition:.15s;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+a.card{display:block;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:#fff;transition:.15s;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 a.card:hover{border-color:var(--teal);box-shadow:0 4px 14px rgba(38,166,164,.15);transform:translateY(-2px)}
 .tag{display:inline-block;font-size:11px;font-weight:600;color:var(--teal);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
-.card h2{margin:0 0 6px;font-size:19px;color:var(--ink)}
-.card p{margin:0;color:var(--mut);font-size:13px;line-height:1.55}
+.card h2{margin:0 0 6px;font-size:17px;color:var(--ink)}
+.card p{margin:0;color:var(--mut);font-size:13px;line-height:1.5}
 .count{float:right;font-size:12px;color:var(--mut);font-weight:600}
-.soon{border:1px dashed var(--line);border-radius:12px;padding:18px 24px;color:#9aa1ac;font-size:13px;background:#fff}
 .foot{color:var(--mut);font-size:12px;margin-top:34px;border-top:1px solid var(--line);padding-top:16px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
 </style></head>
 <body><div class="wrap">
 <h1>Options Microstructure — Study Library</h1>
-<p class="sub">Interactive per-ticker studies of open interest, gamma, implied vol, and dealer positioning. Each study is a self-contained set of charts (zoom, pan, hover; animations have Play/Pause + a time slider).</p>
+<p class="sub">Interactive per-ticker studies of open interest, gamma, implied vol, and dealer positioning — 15 sessions. Each study: charts with zoom/pan/hover; animations have Play/Pause + a time slider. Implied-move bells now show the 20/30/50-delta ladder and decay to expiry.</p>
 <div class="grid">
   <a class="card" href="SPX-SPY_2025-10-10/index.html">
     <span class="count">12 charts</span>
     <span class="tag">SPX · SPY · 2025-10-10</span>
-    <h2>SPX / SPY — Open Interest, Gamma, IV &amp; Implied-Move Bells</h2>
-    <p>Open interest and minute-by-minute gamma for SPX &amp; SPY; call-delta S-curve; at-the-money IV through the day; per-strike (6575 / 6600 / 6700) IV + put/call volume; and implied-move "bells" that breathe with each strike's IV as spot approaches. The 10/10 fast selloff through 6700, with the 0DTE fit-noise window flagged.</p>
+    <h2>SPX / SPY — OI, Gamma, IV &amp; Bells</h2>
+    <p>OI and minute-by-minute gamma for SPX &amp; SPY; call-delta S-curve; ATM IV; per-strike (6575/6600/6700) IV + volume and implied-move bells. The 10/10 fast selloff through 6700.</p>
   </a>
   <a class="card" href="SMCI_2026-06-09/index.html">
     <span class="count">10 charts</span>
     <span class="tag">SMCI · 2026-06-09</span>
     <h2>SMCI — Gamma-Wall Break (−8.6%)</h2>
-    <p>Super Micro breaks below its 44.5 call-gamma wall and sells to 38. OI, gamma, delta, ATM IV, plus per-strike (44.5 / 42 / 40) IV + put/call volume and implied-move bells. IV runs ~100–150% — the bells are enormous.</p>
+    <p>Broke below the 44.5 call-gamma wall and sold to 38. IV ~100–150%.</p>
   </a>
   <a class="card" href="SMCI_2026-06-10/index.html">
     <span class="count">10 charts</span>
     <span class="tag">SMCI · 2026-06-10</span>
     <h2>SMCI — Capitulation (−18.5%)</h2>
-    <p>The next session: gaps down and trends straight to 29 — a 25% range day. Same chart set on the 35 / 32 / 30 strikes it fell through. Together with 6/09 it's a ~35% two-day collapse.</p>
+    <p>Gapped down and trended to 29 on a ~$7B capital raise. ~35% two-day collapse with 6/09.</p>
   </a>
   <a class="card" href="TSLA_2025-06-05/index.html">
     <span class="count">10 charts</span>
     <span class="tag">TSLA · 2025-06-05</span>
     <h2>TSLA — Feud Crash (−11.7%)</h2>
-    <p>The Trump–Musk-feud selloff: Tesla breaks its 300 call-gamma wall and sells to 275 (15% range). OI, gamma, delta, ATM IV, plus per-strike (300 / 290 / 280) IV + put/call volume and implied-move bells.</p>
+    <p>Trump–Musk-feud selloff: broke the 300 gamma wall, sold to 275.</p>
   </a>
   <a class="card" href="TSLA_2025-06-09/index.html">
     <span class="count">10 charts</span>
     <span class="tag">TSLA · 2025-06-09</span>
     <h2>TSLA — Snapback (+8.2%)</h2>
-    <p>Two sessions later: reclaims the 300 wall and runs to 309. Same chart set on the 290 / 300 / 310 strikes it rallied through — the mirror image of the crash day.</p>
+    <p>Reclaimed the 300 wall and ran to 309 — mirror of the crash day.</p>
   </a>
-  <div class="soon">More tickers &amp; trading days coming — each will land here as its own study.</div>
+  <a class="card" href="NVDA_2025-01-27/index.html">
+    <span class="count">10 charts</span>
+    <span class="tag">NVDA · 2025-01-27</span>
+    <h2>NVDA — DeepSeek Selloff (−5.1%)</h2>
+    <p>The DeepSeek AI-scare session; sold to 118.</p>
+  </a>
+  <a class="card" href="NVDA_2025-01-28/index.html">
+    <span class="count">10 charts</span>
+    <span class="tag">NVDA · 2025-01-28</span>
+    <h2>NVDA — Snapback (+5.8%)</h2>
+    <p>Recovered to 129 the next session.</p>
+  </a>
+  <a class="card" href="MSTR_2026-02-05/index.html">
+    <span class="count">10 charts</span>
+    <span class="tag">MSTR · 2026-02-05</span>
+    <h2>MSTR — Selloff (−11.3%)</h2>
+    <p>Sharp drop to 107 (IV ~260% — bells are huge).</p>
+  </a>
+  <a class="card" href="MSTR_2026-02-06/index.html">
+    <span class="count">10 charts</span>
+    <span class="tag">MSTR · 2026-02-06</span>
+    <h2>MSTR — Snapback (+16.7%)</h2>
+    <p>Violent 1-DTE rebound to 135.</p>
+  </a>
+  <a class="card" href="PLTR_2025-08-19/index.html">
+    <span class="count">10 charts</span>
+    <span class="tag">PLTR · 2025-08-19</span>
+    <h2>PLTR — Selloff (−8.0%)</h2>
+    <p>Sold off to 158.</p>
+  </a>
+  <a class="card" href="PLTR_2025-08-20/index.html">
+    <span class="count">10 charts</span>
+    <span class="tag">PLTR · 2025-08-20</span>
+    <h2>PLTR — Stabilize (+2.5%)</h2>
+    <p>Steadied after the drop, mild bounce.</p>
+  </a>
+  <a class="card" href="RGTI_2025-01-07/index.html">
+    <span class="count">10 charts</span>
+    <span class="tag">RGTI · 2025-01-07</span>
+    <h2>RGTI — Quantum Wobble (−7.3%)</h2>
+    <p>Quantum-stock wobble after the “15–20 years” comments. IV ~200%.</p>
+  </a>
+  <a class="card" href="RGTI_2025-01-08/index.html">
+    <span class="count">10 charts</span>
+    <span class="tag">RGTI · 2025-01-08</span>
+    <h2>RGTI — Quantum Crash (−22.0%)</h2>
+    <p>Gapped down and capitulated to 10. IV ~350%.</p>
+  </a>
+  <a class="card" href="RGTI_2025-01-13/index.html">
+    <span class="count">10 charts</span>
+    <span class="tag">RGTI · 2025-01-13</span>
+    <h2>RGTI — Bleed (−17.6%)</h2>
+    <p>Continued lower to 6.</p>
+  </a>
+  <a class="card" href="RGTI_2025-01-14/index.html">
+    <span class="count">10 charts</span>
+    <span class="tag">RGTI · 2025-01-14</span>
+    <h2>RGTI — Rebound (+36.8%)</h2>
+    <p>Explosive rebound — ripped to 9.</p>
+  </a>
 </div>
-<p class="foot">Open interest &amp; gamma from ORATS 1-minute options data; underlying from 1-minute OHLCV. Public market data. Built with the standardized options-microstructure engine.</p>
+<p class="foot">Options data 1-minute snapshots (ORATS schema); underlying from the same feed. Public market data. Built with the standardized options-microstructure engine.</p>
 </div></body></html>
